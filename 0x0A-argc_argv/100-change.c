@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,9 +8,12 @@
   *
   * Return: 0 on success
   */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int cents, coins = 0;
+	int money = atoi(argv[1]);
+	int count = 0;
+	int i;
+	int cents[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
@@ -19,39 +21,25 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	cents = atoi(argv[1]);
-
-	if (cents < 0)
+	else if (money < 0)
 	{
 		printf("0\n");
-		return (0);
 	}
-
-	while (cents > 0)
+	else
 	{
-		if (cents >= 25)
+		for (i = 0; i < 5; i++)
 		{
-			coins++;
-			cents -= 25;
+			if (cents[i] <= money)
+			{
+				count += money / cents[i];
+				money %= cents[i];
+				if (money == 0)
+				{
+					break;
+				}
+			}
 		}
-		else if (cents >= 10)
-		{
-			coins++;
-			cents -= 10;
-		}
-		else if (cents >= 5)
-		{
-			coins++;
-			cents -= 5;
-		}
-		else
-		{
-			coins++;
-			cents--;
-		}
+		printf("%d\n", count);
 	}
-
-	printf("%d\n", coins);
-
 	return (0);
 }
