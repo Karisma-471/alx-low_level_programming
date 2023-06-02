@@ -9,8 +9,8 @@
   */
 int _strlen(char *s)
 {
-	int n;
-	n = 0;
+	int n = 0;
+
 
 	while (s[n] != '\0')
 	{
@@ -19,6 +19,7 @@ int _strlen(char *s)
 
 	return (n);
 }
+
 
 /**
   * *_strcpy - copies the string pointed to by src
@@ -31,8 +32,8 @@ int _strlen(char *s)
   */
 char *_strcpy(char *dest, char *src)
 {
-	int len, j;
-	len = 0;
+	int len = 0, j;
+
 
 	while (src[len] != '\0')
 	{
@@ -46,6 +47,7 @@ char *_strcpy(char *dest, char *src)
 
 	return (dest);
 }
+
 
 /**
   * new_dog - create a new dog
