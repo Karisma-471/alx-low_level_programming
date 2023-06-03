@@ -1,8 +1,8 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
-  * before_main - a function that prints a string
-  * before the main function is executed
+  * before_main - a function that a string before the main
   *
   * Return: Always 0 on success
   */
