@@ -4,7 +4,7 @@
 
 
 /**
-  * main - a pfunction that multiplies two positive numbers
+  * main - a function that multiplies two positive numbers
   * @argc: number of arguments
   * @argv: array of argument
   *
